@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="src/assets/images/icon/running.ico" type="image/x-icon">
+    <title>Game</title>
+</head>
+<body>
+    <main id="TelaJogo">
+
+        <div class="TelaJogo__score">
+            <h1 class="TelaJogo__displayScore">Score:</h1>
+            <p class="TelaJogo__displayScore score">0</p>
+        </div>
+
+        <div class="TelaJogo__cenario">
+
+            <div class="cenario__mountain_back_container">
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+                <div class="mountain_back_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/far_mountains_fc.png">
+                </div>
+
+            </div>
+
+            <div class="cenario__mountain_container">
+                
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+                <div class="mountain_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/grassy_mountains_fc.png">
+                </div>
+
+            </div>
+
+            <div class="cenario__clouds_container">
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+                <div class="clouds_container__item">
+                    <img src="./src/assets/images/backgrounds/layers/clouds_mid_fc.png"></img>
+                </div>
+
+            </div>
+
+            <div class="cenario__chao"></div>
+
+        </div>
+
+        <div class="TelaJogo__player" id="player">
+            <img src="./src/assets/images/player-character/Mega-Man/run.gif" alt="player" id="player_sprite">         
+        </div>
+
+        <div class="colisao_player"></div>
+        <div class="TelaJogo__enemies_container"></div>
+
+        <button class="TelaJogo__button_musicLevel"><img src="./src/assets/images/music controler/mute_music_default.png" alt="" class="btn__music muteMusic"></button>
+
+        <div class="TelaJogo__gameOver" style="display: none;">
+
+            <p class="TelaJogo__gameOver__Score">0</p>
+
+            <p class="TelaJogo__gameOver__bestScore">0</p>
+
+            <img src="src/assets/images/Medals/Bronze-Rank_0 (1).png" alt="" class="score_ranking_medal">
+
+            <div class="TelaJogo__gameOver__buttons">
+
+                <button>
+                    <img src="./src/assets/images/ui-game/Buttons/back_default.png" alt="" class="btn__back" style="display: none;">
+                </button>
+
+                <button>
+                    <img src="./src/assets/images/ui-game/Buttons/retry_default.png" alt="" class="btn__retry">
+                </button>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="src/javascript/player.js"></script>
+    <script src="src/javascript/colisao.js"></script>
+    <script src="src/javascript/cenario.js"></script>
+    <script src="src/javascript/animationButtons.js"></script>
+    <script src="src/javascript/medal_ranking.js"></script>
+    <script src="src/javascript/enemies.js"></script>
+
+</body>
+</html>

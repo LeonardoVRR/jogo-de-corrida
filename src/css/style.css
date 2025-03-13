@@ -1,0 +1,274 @@
+@font-face {
+    font-family: "pixelStyle";
+    src: url("../assets/fonts/daydream_3/Daydream.ttf") format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#TelaJogo > *:not(.TelaJogo__gameOver, .TelaJogo__button_musicLevel){
+    pointer-events: none;
+}
+
+#TelaJogo {
+    margin: 0 8%;
+    height: 100dvh;
+    background: #000 url("../assets/images/backgrounds/sky.png") fixed no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.TelaJogo__score {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 100%;
+    z-index: 998;
+    margin-top: 10px;
+    padding-left: 20px;
+
+    gap: 5px;
+}
+
+.TelaJogo__displayScore {
+    font-family: "pixelStyle", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.cenario__mountain_back_container, .cenario__mountain_container, .cenario__clouds_container {
+    
+    position: absolute;
+    bottom: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    /* align-items: flex-end; */
+    
+    width: 100%;
+    height: 100%;
+}
+
+.TelaJogo__cenario img {
+    width: 100%;
+}
+
+.mountain_back_container__item, .mountain_container__item, .clouds_container__item {
+    position: absolute;
+    bottom: 0px;
+    /* right: -120%; */
+
+    display: flex;
+    flex-flow: row nowrap;
+    
+    width: 55%;
+
+    animation: startMoveScenary 18s linear infinite;
+}
+
+.mountain_container__item {
+    width: 50%;
+
+    animation: startMoveScenary 12s linear infinite;
+}
+
+.clouds_container__item {
+    right: var(--startPosition);
+    width: 45%;
+    animation: startMoveScenary 2s linear infinite;
+}
+
+.cenario__chao {
+    position: absolute;
+    bottom: 0%;
+    background-color: #a77741;
+
+    z-index: 3;
+    width: 100%;
+    height:100px;
+}
+
+@keyframes startMoveScenary {
+    from {right: var(--startPosition);}
+    to {right: var(--finalPosition);}
+}
+
+/* @keyframes moveScenary {
+    from {right: -120%;}
+    to {right: 100%;}
+} */
+
+/* @keyframes move_mountain_back {
+    from {right: -160%;}
+    to {right: 100%;}
+}
+
+@keyframes move_mountain_front {
+    from {right: -120%;}
+    to {right: 100%;}
+}
+
+@keyframes move_clouds {
+    from {right: -120%;}
+    to {right: 100%;}
+} */
+
+/* ------------------ configs player ------------------ */
+
+.TelaJogo__player {
+    position: absolute;
+    bottom: 55px;
+    left: 70px;
+    
+    z-index: 999;
+}
+
+#player_sprite {
+    height: 13dvw;
+}
+
+.colisao_player {
+    position: absolute;
+    bottom: 90px;
+    left: 110px;
+
+    height: 190px;
+    width: 120px;
+    z-index: 998;
+}
+
+.colisao_enemie {
+    position: absolute;
+    bottom: 87px;
+
+    height: 60px;
+    width: 80px;
+    z-index: 997;
+}
+
+.player_jump {
+    animation: jump 1s ease-out forwards;
+}
+
+@keyframes jump {
+    0% {bottom: 60px; left: 70px;}
+
+    40% {bottom: 230px; left: 70px;}
+
+    50% {bottom: 230px; left: 70px;}
+
+    60% {bottom: 230px; left: 70px;}
+
+    100% {bottom: 60px; left: 70px;}
+}
+
+
+/* ------------------ configs Enemy ------------------ */
+
+.TelaJogo__enemies {
+    position: absolute;
+    bottom: 87px;
+    z-index: 998;
+}
+
+.movimento_inimigo {
+    animation: move_enemies 4.5s linear forwards;
+}
+
+@keyframes move_enemies {
+    from {right: -100%;}
+    to {right: 100%;}
+}
+
+
+/* ------------------ configs Game Over ------------------ */
+
+.TelaJogo__gameOver {
+    position: absolute;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+
+    background: #ffffff00 url("../assets/images/ui-game/gameOver_screen.png") fixed no-repeat center center;
+    background-size: contain;
+
+    z-index: 9999;
+}
+
+.TelaJogo__gameOver__Score {
+    font-family: "pixelStyle", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 38px;
+    top: 252px;
+}
+
+.TelaJogo__gameOver__bestScore {
+    font-family: "pixelStyle", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 38px;
+    top: 328px;
+}
+
+.score_ranking_medal {
+    position: absolute;
+    left: 39px;
+    top: 265px;
+    width: 90px;
+    height: 90px;
+    scale: 1.2;
+    pointer-events: none;
+}
+
+.TelaJogo__gameOver__buttons {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 50px;
+    margin: 0 100px;
+}
+
+.TelaJogo__gameOver__buttons > button {
+    border: none;
+    background-color: #00000000;
+}
+
+.TelaJogo__gameOver__buttons > button > img {
+    width: 50px;
+    height: 50px;
+}
+
+.TelaJogo__button_musicLevel {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+
+    border: none;
+    background-color: #00000000;
+}
