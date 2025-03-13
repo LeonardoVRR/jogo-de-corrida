@@ -29,7 +29,7 @@ não é necessário nenhum pré-requisito é só acessar o projeto pelo link dis
 
 
 ## Acesso ao Projeto
-para acessar o projeto utilize o seguinte link: 
+para acessar o projeto utilize o seguinte link: https://jogo-corrida-infinita.netlify.app/
 
 
 ## Tecnologias utilizadas
