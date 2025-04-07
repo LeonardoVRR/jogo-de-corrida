@@ -21,7 +21,8 @@ Desenvolver um jogo no estilo do T-Rex Game do Google para praticar a implementa
 não é necessário nenhum pré-requisito é só acessar o projeto pelo link disponibilizado em [Acesso ao Projeto](#acesso-ao-projeto) e utiliza-lo.
 
 ## Resultado final do projeto
-![alt text](<demo (1).gif>)
+![demo](https://github.com/user-attachments/assets/8d4bc125-c848-4ed6-a303-199c633fd080)
+
 
 
 
